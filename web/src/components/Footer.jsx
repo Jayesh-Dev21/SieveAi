@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>MIT License © 2024 SieveAi • Made with ❤️ for developers who value privacy</p>
+          <p>MIT License © 2026 SieveAi • Made for developers who value privacy</p>
         </div>
       </div>
     </footer>

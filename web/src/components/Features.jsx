@@ -2,37 +2,31 @@ import { motion } from 'framer-motion';
 
 const features = [
   {
-    icon: '🔒',
     title: '100% Local-First',
     description:
       'Your code never leaves your machine. Uses Ollama for local LLM inference. No external API calls, no data collection, no privacy compromises.',
   },
   {
-    icon: '🤖',
     title: 'Hybrid AI Engine',
     description:
       'Combines static pattern matching with AI reasoning. Multiple specialized agents for bugs, security vulnerabilities, and style issues work in parallel.',
   },
   {
-    icon: '⚡',
     title: 'Lightning Fast',
     description:
       'SQLite-based caching system stores previous analyses. Incremental reviews only check what changed. Typical scans complete in under 3 seconds.',
   },
   {
-    icon: '🎯',
     title: 'Confidence Filtering',
     description:
       'Adjustable confidence threshold (default ≥78%) eliminates false positives. Only see issues the AI is genuinely confident about.',
   },
   {
-    icon: '🔍',
     title: 'Multi-Agent System',
     description:
       'Specialized AI agents focus on different concerns: BugAgent finds logic errors, SecurityAgent identifies vulnerabilities, StyleAgent improves maintainability.',
   },
   {
-    icon: '📊',
     title: 'Flexible Output',
     description:
       'Choose text, JSON, or interactive TUI formats. Integrate with CI/CD pipelines or use as a pre-commit hook. Works with your workflow.',
@@ -59,7 +53,6 @@ const Features = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -4 }}
             >
-              <span className="feature-icon">{feature.icon}</span>
               <h3 className="feature-title">{feature.title}</h3>
               <p className="feature-description">{feature.description}</p>
             </motion.div>

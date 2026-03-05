@@ -14,13 +14,13 @@ SieveAi is an open-source code review tool that combines static analysis with lo
 
 ## Features
 
-- 🔒 **Local-first**: Code never leaves your machine (uses Ollama by default)
-- 🤖 **Hybrid Analysis**: Combines static patterns with AI reasoning
-- ⚡ **Fast & Incremental**: SQLite-based caching for speed
-- 🎯 **Confidence Filtering**: Only show high-confidence findings (default ≥78%)
-- 🔍 **Multiple Agents**: Bug detection, security analysis, style/maintainability
-- 📊 **Rich Output**: Text, JSON, or TUI formats
-- 🧠 **Learning System**: Reduce false positives over time
+- **Local-first**: Code never leaves your machine (uses Ollama by default)
+- **Hybrid Analysis**: Combines static patterns with AI reasoning
+- **Fast & Incremental**: SQLite-based caching for speed
+- **Confidence Filtering**: Only show high-confidence findings (default ≥78%)
+- **Multiple Agents**: Bug detection, security analysis, style/maintainability
+- **Rich Output**: Text, JSON, or TUI formats
+- **Learning System**: Reduce false positives over time
 
 ## Quick Start
 
@@ -161,4 +161,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-**Made with ❤️ for developers who value privacy and code quality**
+**Made for developers who value privacy and code quality**
