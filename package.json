@@ -26,7 +26,7 @@
     }
   },
   "bin": {
-    "sieveai": "./dist/cli/index.js"
+    "sieveai": "dist/cli/index.js"
   },
   "files": [
     "dist",

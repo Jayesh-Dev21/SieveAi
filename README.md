@@ -2,6 +2,12 @@
 
 ![](./sieveAssets/banner_f.png)
 
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
+![Vitest](https://img.shields.io/badge/tests-vitest-10b981?logo=vitest&logoColor=white)
+![License](https://img.shields.io/github/license/Jayesh-Dev21/SieveAi)
+![npm](https://img.shields.io/npm/v/sieveai?color=cb3837&logo=npm&logoColor=white)
+
 **Local-first AI code review CLI/TUI with hybrid static+AI analysis**
 
 SieveAi is an open-source code review tool that combines static analysis with local LLM-powered insights. Review your code privately without sending it to external servers.
@@ -22,11 +28,11 @@ SieveAi is an open-source code review tool that combines static analysis with lo
 
 1. **Node.js 20+**
 2. **Ollama** (for local LLM)
-   ```bash
-   # Install Ollama: https://ollama.ai
-   # Pull default model
-   ollama pull glm-4.7
-   ```
+  ```bash
+  # Install Ollama: https://ollama.ai
+  # Pull default model
+  ollama pull glm-4.7
+  ```
 
 ### Installation
 
@@ -106,6 +112,8 @@ npm test
 npm run lint:fix
 npm run format
 ```
+
+For a complete step-by-step guide (clone → build → test → publish), see [docs/SETUP_BUILD.md](docs/SETUP_BUILD.md).
 
 ## Project Structure
 
