@@ -1,6 +1,6 @@
 # SieveAi
 
-![](https://raw.githubusercontent.com/Jayesh-Dev21/SieveAi/refs/heads/master/sieveAssets/banner_f.png?token=GHSAT0AAAAAADMCDFJPSGFGCRY5XQA6J34K2NJCCLA)
+<img width="1536" height="615" alt="banner_f" src="https://github.com/user-attachments/assets/d3c2544d-66d6-46bd-9bfb-ae3c16c22b68" />
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
 ![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
