@@ -1,5 +1,7 @@
 # SieveAi
 
+![](./sieveAssets/banner_f.png)
+
 **Local-first AI code review CLI/TUI with hybrid static+AI analysis**
 
 SieveAi is an open-source code review tool that combines static analysis with local LLM-powered insights. Review your code privately without sending it to external servers.

@@ -12,12 +12,12 @@
     "static-analysis",
     "typescript"
   ],
-  "homepage": "https://github.com/yourusername/sieveai",
+  "homepage": "https://github.com/Jayesh-Dev21/sieveai",
   "bugs": {
-    "url": "https://github.com/yourusername/sieveai/issues"
+    "url": "https://github.com/Jayesh-Dev21/sieveai/issues"
   },
   "license": "MIT",
-  "author": "Your Name",
+  "author": "Jayesh-Dev21",
   "type": "module",
   "exports": {
     ".": {
