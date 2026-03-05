@@ -1,0 +1,74 @@
+{
+  "name": "sieveai",
+  "version": "0.1.0",
+  "description": "Local-first AI code review CLI/TUI with hybrid static+AI analysis, confidence filtering, and incremental caching",
+  "keywords": [
+    "code-review",
+    "ai",
+    "cli",
+    "tui",
+    "local-llm",
+    "ollama",
+    "static-analysis",
+    "typescript"
+  ],
+  "homepage": "https://github.com/yourusername/sieveai",
+  "bugs": {
+    "url": "https://github.com/yourusername/sieveai/issues"
+  },
+  "license": "MIT",
+  "author": "Your Name",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "sieveai": "./dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "@commander-js/extra-typings": "^12.1.0",
+    "better-sqlite3": "^11.7.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "debug": "^4.3.7",
+    "ink": "^5.0.1",
+    "ora": "^8.1.1",
+    "react": "^18.3.1",
+    "simple-git": "^3.27.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/debug": "^4.1.12",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@vitest/coverage-v8": "^2.1.8",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
