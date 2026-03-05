@@ -59,8 +59,7 @@ const CreatorCard = ({ onClose }) => {
 
         <div className="card-content">
           <p className="card-description">
-            Full-stack developer passionate about building developer tools and AI-powered
-            applications.
+            A passionate Developer, building cool projects and gaining knowledge. Feel free to connect with me on GitHub and check out my personal website for more projects and updates!
           </p>
         </div>
 
