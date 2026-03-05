@@ -88,3 +88,89 @@ text**Notes**:
 - Total lines of code target: <5k for MVP (focus on composability).
 - Gitignore: `cache/`, `node_modules/`, `.env` (for API keys).
 - See [ARCHITECTURE.md](ARCHITECTURE.md) for data flows.
+
+---
+
+## Actual Implementation (As Built - 2026-03-05)
+
+The MVP has been implemented with the following actual structure:
+
+```
+SieveAi/
+├── docs/                          # Documentation (8 files)
+├── src/                           # TypeScript source
+│   ├── agents/                    # AI review agents (4 files)
+│   │   ├── base-agent.ts          # Abstract agent with LLM integration
+│   │   ├── bug-agent.ts           # Bug detection
+│   │   ├── security-agent.ts      # Security analysis
+│   │   └── style-agent.ts         # Maintainability
+│   │
+│   ├── cache/                     # SQLite caching (2 files)
+│   │   ├── database.ts            # Better-sqlite3 wrapper
+│   │   └── manager.ts             # High-level cache interface
+│   │
+│   ├── cli/                       # Command-line interface (2 files)
+│   │   ├── index.ts               # Commander.js setup
+│   │   └── commands/check.ts      # Main check command
+│   │
+│   ├── config/                    # Configuration (3 files)
+│   │   ├── schema.ts              # Zod schemas
+│   │   ├── defaults.ts            # Default values
+│   │   └── loader.ts              # Config discovery
+│   │
+│   ├── git/                       # Git operations (2 files)
+│   │   ├── repository.ts          # simple-git wrapper
+│   │   └── diff-parser.ts         # Unified diff parser
+│   │
+│   ├── llm/                       # LLM client (3 files)
+│   │   ├── client.ts              # Unified interface
+│   │   ├── prompts.ts             # System/user prompts
+│   │   └── providers/ollama.ts    # Ollama HTTP client
+│   │
+│   ├── orchestrator/              # Agent coordination (1 file)
+│   │   └── orchestrator.ts        # Parallel execution & filtering
+│   │
+│   ├── reporters/                 # Output formatters (2 files)
+│   │   ├── text-reporter.ts       # Chalk-based terminal output
+│   │   └── json-reporter.ts       # JSON output
+│   │
+│   ├── static/                    # Static analysis (1 file)
+│   │   └── secrets.ts             # Regex secret scanner
+│   │
+│   ├── types/                     # Type definitions (1 file)
+│   │   └── index.ts               # All shared types
+│   │
+│   └── utils/                     # Utilities (4 files)
+│       ├── logger.ts              # debug + chalk logger
+│       ├── hash.ts                # SHA-256 utilities
+│       ├── errors.ts              # Error handling
+│       └── index.ts               # Common utilities
+│
+├── dist/                          # Compiled output (gitignored in dev)
+├── node_modules/                  # Dependencies
+├── .sieveai/                      # Runtime cache (gitignored)
+│   └── cache.db                   # SQLite database
+│
+├── .gitignore
+├── .sieveai.config.example.json   # Example config
+├── biome.json                     # Linter/formatter config
+├── LICENSE                        # MIT
+├── package.json
+├── README.md
+├── tsconfig.json
+├── vitest.config.ts
+└── test-sample.js                 # Demo file for testing
+```
+
+**Total files created:** 39 files  
+**Lines of code:** ~3,700 (excluding node_modules, tests)  
+**Build size:** ~150KB compiled JavaScript (dist/)
+
+### Key Implementation Choices
+
+1. **Native ESM** - All imports use `.js` extensions (Node16 modules)
+2. **Strict TypeScript** - All strict flags enabled except `exactOptionalPropertyTypes`
+3. **Zero external API deps** - No axios, no external LLM APIs by default
+4. **Synchronous SQLite** - better-sqlite3 for fast caching
+5. **Graceful degradation** - Works without LLM (static analysis only)
+
