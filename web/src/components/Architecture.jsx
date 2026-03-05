@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Fragment } from 'react';
 
 const pipelineSteps = [
   'CLI Input',
@@ -37,18 +38,29 @@ const Architecture = () => {
 
         <div className="pipeline">
           {pipelineSteps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-            >
-              <motion.div className="pipeline-step" whileHover={{ scale: 1.05 }}>
+            <Fragment key={index}>
+              <motion.div
+                className="pipeline-step"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+              >
                 {step}
               </motion.div>
-              {index < pipelineSteps.length - 1 && <span className="pipeline-arrow">→</span>}
-            </motion.div>
+              {index < pipelineSteps.length - 1 && (
+                <motion.span
+                  className="pipeline-arrow"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.1 + 0.15 }}
+                >
+                  →
+                </motion.span>
+              )}
+            </Fragment>
           ))}
         </div>
 

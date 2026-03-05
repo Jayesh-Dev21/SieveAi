@@ -12,7 +12,7 @@
     "static-analysis",
     "typescript"
   ],
-  "homepage": "https://github.com/Jayesh-Dev21/SieveAi",
+  "homepage": "https://sieve-ai.vercel.app/",
   "bugs": {
     "url": "https://github.com/Jayesh-Dev21/SieveAi/issues"
   },
