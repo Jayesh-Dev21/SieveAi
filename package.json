@@ -1,6 +1,6 @@
 {
   "name": "sieveai",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Local-first AI code review CLI/TUI with hybrid static+AI analysis, confidence filtering, and incremental caching",
   "keywords": [
     "code-review",
