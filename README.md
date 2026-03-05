@@ -1,6 +1,6 @@
 # SieveAi
 
-![](https://github.com/user-attachments/assets/d3c2544d-66d6-46bd-9bfb-ae3c16c22b68)
+![](https://sieve-ai.vercel.app/banner_f.png)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
 ![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
