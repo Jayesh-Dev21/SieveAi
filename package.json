@@ -1,6 +1,6 @@
 {
   "name": "sieveai",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Local-first AI code review CLI/TUI with hybrid static+AI analysis, confidence filtering, and incremental caching",
   "keywords": [
     "code-review",
@@ -28,7 +28,11 @@
   "bin": {
     "sieveai": "dist/cli/index.js"
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
