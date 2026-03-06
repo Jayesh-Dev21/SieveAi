@@ -13,6 +13,10 @@
 > 📦 **Available on npm:** `npm install -g sieveai` | [View on NPM](https://www.npmjs.com/package/sieveai)
 
 SieveAi is an intelligent code review tool that combines static analysis with AI-powered insights to help maintain code quality, security, and performance. It supports 15+ programming languages and provides deep analysis including const correctness, security vulnerabilities, logic errors, and architectural improvements.
+## Showcase
+
+![](./sieveAssets/demo_no_review.gif)
+![](./sieveAssets/demo_now_review.gif)
 
 ## Features
 
