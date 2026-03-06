@@ -16,6 +16,9 @@ import { BugAgent } from '../agents/bug-agent.js';
 import { SecurityAgent } from '../agents/security-agent.js';
 import { StyleAgent } from '../agents/style-agent.js';
 import { scanSecrets } from '../static/secrets.js';
+import { checkSyntax } from '../static/syntax-checker.js';
+import { analyzeWhitespace } from '../static/whitespace-analyzer.js';
+// import { checkSpelling } from '../static/spell-checker.js';
 import { CacheManager } from '../cache/manager.js';
 import { createLogger } from '../utils/logger.js';
 import { getCachePath } from '../config/loader.js';
@@ -73,13 +76,34 @@ export class ReviewOrchestrator {
 
     const allFindings: ReviewFinding[] = [];
 
-    // Step 1: Static analysis (secrets)
+    // Step 1: Static analysis
     if (this.config.enableSecretScanning) {
       logger.info('Running secret scanner...');
       const secretFindings = scanSecrets(files);
       allFindings.push(...secretFindings);
       logger.info(`Found ${secretFindings.length} secrets`);
     }
+
+    // Step 1.5: Syntax checking
+    logger.info('Running syntax checker...');
+    const syntaxFindings = checkSyntax(files);
+    allFindings.push(...syntaxFindings);
+    logger.info(`Found ${syntaxFindings.length} syntax errors`);
+
+    // Step 1.6: Spell checking (future feature)
+    // TODO: Enable after resolving type configuration issues
+    // if (this.config.enableSpellCheck ?? true) {
+    //   logger.info('Running spell checker...');
+    //   const spellFindings = checkSpelling(files);
+    //   allFindings.push(...spellFindings);
+    //   logger.info(`Found ${spellFindings.length} spelling issues`);
+    // }
+
+    // Step 1.7: Whitespace analysis
+    logger.info('Running whitespace analyzer...');
+    const whitespaceFindings = analyzeWhitespace(files);
+    allFindings.push(...whitespaceFindings);
+    logger.info(`Found ${whitespaceFindings.length} formatting issues`);
 
     // Step 2: AI agents (if LLM is available)
     if (isAvailable) {

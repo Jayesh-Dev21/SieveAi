@@ -47,7 +47,12 @@
     "format": "biome format --write .",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist",
-    "prepublishOnly": "npm run clean && npm run build"
+    "prepublishOnly": "npm run clean && npm run build",
+    "check": "npx tsx src/cli/index.ts check",
+    "check:verbose": "npx tsx src/cli/index.ts check --verbose",
+    "check:json": "npx tsx src/cli/index.ts check --format json",
+    "start": "node dist/cli/index.js",
+    "setup": "npm install && npm run build"
   },
   "dependencies": {
     "@commander-js/extra-typings": "^12.1.0",

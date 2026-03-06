@@ -54,13 +54,15 @@ export class LLMClient {
     model: string;
   } {
     const parts = modelStr.split(':');
-    if (parts.length !== 2) {
+    if (parts.length < 2) {
       throw new LLMError(
-        'Invalid model format. Expected "provider:model" (e.g., "ollama:glm-4.7")',
+        'Invalid model format. Expected "provider:model" (e.g., "ollama:glm-4.7" or "ollama:gemma3:latest")',
       );
     }
 
-    const [provider, model] = parts as [string, string];
+    // Support provider:model:tag format (e.g., ollama:gemma3:latest)
+    const provider = parts[0]!; // Safe because we checked parts.length >= 2
+    const model = parts.slice(1).join(':'); // Rejoin everything after the first colon
     return { provider, model };
   }
 

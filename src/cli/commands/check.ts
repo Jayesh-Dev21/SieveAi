@@ -2,15 +2,13 @@
  * Check command - main code review command
  */
 
-import { createLogger } from '../../utils/logger.js';
 import { loadConfig } from '../../config/loader.js';
 import { createGitRepository } from '../../git/repository.js';
 import { ReviewOrchestrator } from '../../orchestrator/orchestrator.js';
 import { formatTextReport } from '../../reporters/text-reporter.js';
 import { formatJsonReport } from '../../reporters/json-reporter.js';
+import { renderTUIReport } from '../../reporters/tui-reporter.js';
 import ora from 'ora';
-
-const logger = createLogger('cli:check');
 
 interface CheckOptions {
   model?: string;
@@ -94,6 +92,11 @@ export async function checkCommand(options: CheckOptions): Promise<void> {
 
     if (config.format === 'json') {
       console.log(formatJsonReport(report));
+    } else if (config.format === 'tui') {
+      renderTUIReport(report, {
+        verbose: config.verbose,
+        showRationale: config.showRationale,
+      });
     } else {
       console.log(
         formatTextReport(report, {
@@ -113,7 +116,16 @@ export async function checkCommand(options: CheckOptions): Promise<void> {
     }
   } catch (error) {
     spinner.fail('Review failed');
-    logger.error('Error:', error);
+    console.error('✖ Error:');
+    if (error instanceof Error) {
+      console.error(error.message);
+      if (error.stack) {
+        console.error('\nStack trace:');
+        console.error(error.stack);
+      }
+    } else {
+      console.error(error);
+    }
     process.exit(1);
   }
 }

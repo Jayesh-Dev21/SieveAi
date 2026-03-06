@@ -7,7 +7,7 @@ pnpm-debug.log*
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
-
+.sieveai.config.json
 # Build outputs
 dist/
 *.tsbuildinfo

@@ -38,7 +38,7 @@ export const ReviewConfigSchema = z.object({
   semgrepRules: z.array(z.string()).optional(),
 
   // Output
-  format: FormatSchema.default('text'),
+  format: FormatSchema.default('tui'),
   verbose: z.boolean().default(false),
   showRationale: z.boolean().default(true),
 

@@ -20,7 +20,7 @@ program
   .description('Run code review on git diff')
   .option('--model <model>', 'LLM model to use (format: provider:model)', 'ollama:glm-4.7')
   .option('--min-confidence <number>', 'Minimum confidence threshold (0-100)', '78')
-  .option('--format <format>', 'Output format (text, json, tui)', 'text')
+  .option('--format <format>', 'Output format (tui, text, json)', 'tui')
   .option('--no-cache', 'Disable caching')
   .option('--no-parallel', 'Disable parallel agent execution')
   .option('--verbose', 'Enable verbose logging')
@@ -31,3 +31,4 @@ program
 
 // Parse command line
 program.parse();
+// test comment

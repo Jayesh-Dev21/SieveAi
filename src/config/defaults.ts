@@ -5,7 +5,7 @@
 import type { ReviewConfig } from './schema.js';
 
 export const DEFAULT_CONFIG: Partial<ReviewConfig> = {
-  model: 'ollama:glm-4.7',
+  model: 'ollama:gemma3:latest',
   temperature: 0.7,
   maxTokens: 2048,
   minConfidence: 78,
@@ -14,7 +14,7 @@ export const DEFAULT_CONFIG: Partial<ReviewConfig> = {
   maxConcurrency: 3,
   enableSecretScanning: true,
   enableSemgrep: false,
-  format: 'text',
+  format: 'tui',
   verbose: false,
   showRationale: true,
   enableMemory: true,
