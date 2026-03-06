@@ -10,6 +10,8 @@
 
 **Advanced AI-Powered Code Review Tool with hybrid static + Active AI analysis**
 
+> 📦 **Available on npm:** `npm install -g sieveai` | [View on NPM](https://www.npmjs.com/package/sieveai)
+
 SieveAi is an intelligent code review tool that combines static analysis with AI-powered insights to help maintain code quality, security, and performance. It supports 15+ programming languages and provides deep analysis including const correctness, security vulnerabilities, logic errors, and architectural improvements.
 
 ## Features
@@ -43,6 +45,18 @@ SieveAi is an intelligent code review tool that combines static analysis with AI
 ## Quick Start
 
 ### Installation
+
+#### Option 1: NPM Package (Recommended)
+
+```bash
+# Install globally for CLI usage
+npm install -g sieveai
+
+# Or install locally in your project
+npm install --save-dev sieveai
+```
+
+#### Option 2: From Source
 
 ```bash
 # Clone the repository
@@ -79,8 +93,6 @@ ollama pull deepseek-coder:latest
 
 ```bash
 # Run code review on current git changes
-npx tsx src/cli/index.ts check
-# or if globally installed:
 sieveai check
 
 # Run with verbose output
@@ -91,6 +103,9 @@ sieveai check --format json
 
 # Run with custom model
 sieveai check --model ollama:deepseek-coder:latest
+
+# If installed locally in project:
+npx sieveai check
 ```
 
 ## Configuration

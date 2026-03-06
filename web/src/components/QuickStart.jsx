@@ -3,17 +3,23 @@ import { motion } from 'framer-motion';
 const steps = [
   {
     number: '01',
-    title: 'Install Ollama',
-    description:
-      'SieveAi uses Ollama for local LLM inference. Install it and pull the default model:',
-    code: `# Install from https://ollama.ai
-ollama pull glm-4.7`,
+    title: 'Install SieveAi',
+    description: 'Install globally via npm or locally in your project:',
+    code: `# Install globally for CLI usage
+npm install -g sieveai
+
+# Or install locally in your project
+npm install --save-dev sieveai`,
   },
   {
     number: '02',
-    title: 'Install SieveAi',
-    description: 'Install globally via npm:',
-    code: 'npm install -g sieveai',
+    title: 'Setup LLM Backend',
+    description:
+      'SieveAi uses Ollama for local LLM inference. Install it and pull a supported model:',
+    code: `# Install from https://ollama.ai
+ollama pull gemma3:latest
+# or
+ollama pull deepseek-coder:latest`,
   },
   {
     number: '03',
@@ -28,7 +34,10 @@ sieveai check --base main --target feature-branch
 sieveai check --min-confidence 85
 
 # Output as JSON for CI/CD
-sieveai check --format json`,
+sieveai check --format json
+
+# If installed locally:
+npx sieveai check`,
   },
 ];
 
